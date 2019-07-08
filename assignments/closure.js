@@ -1,14 +1,49 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+// Galaxies!
+
+whatIsYourName = (name) =>{
+if (name === undefined) {
+   enteredName = "Error - Name field is left blank";
+} else {
+  enteredName = name;
+}
+return () => {
+  return `Name: ${enteredName}`;
+  };
+};
+
+
+
+newName = whatIsYourName();
+console.log(newName())
+newName = whatIsYourName("Joe");
+console.log((newName.enteredName));
+console.log(newName());
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
 // ==== Challenge 2: Create a counter function ====
+
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
+ let count = 0;
+return () => {
+  ++count;
+  return count;
+  }
+}
+const myCounter = counter();
+const myOtherCounter = counter();
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myOtherCounter());
+
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
